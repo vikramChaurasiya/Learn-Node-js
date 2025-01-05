@@ -2,12 +2,18 @@ const http = require('http');
 
 const server = http.createServer((req, res) =>{
     console.log(req); 
+    process.exit(); //this used for stope server
+})
+const PORT = 3000;
+server.listen(PORT, () =>{
+    console.log(`server runung on address http://localhost:${PORT}`);
+    
 })
 
-server.listen(3000);
 
 // function requestListener(req, res){
 //     console.log(req);
+    // server.listen(3000);
 // }
 
 
