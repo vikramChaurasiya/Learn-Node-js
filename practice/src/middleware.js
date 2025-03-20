@@ -3,11 +3,11 @@ const express = require("express")
 const app = express();
 
 app.use
-    ("/user",(req, res, next) =>{
+    ("/user",(req, res, next) =>{ //it is middleware
     console.log("runn file");
     next();
     },
-    (req,res,next)=>{
+    (req,res,next)=>{ //it is middleware
         console.log("again");
         next();
     },
