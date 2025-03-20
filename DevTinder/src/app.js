@@ -12,10 +12,14 @@ app.get("/user", (req,res)=>{
     res.send({Firstname:"vikram", lastname:"Chaurasiya"})
 })
 
-app.post("/user", (req,res)=>{
+app.post("/user", (req,res,next)=>{
     console.log("saved data to the databased");
+    next();
+},
+(req,res)=>{
     res.send("Data successfully saved to the databased!")
-})
+}
+)
 
 app.delete("/user", (req, res)=>{
     res.send("deleted successfully");
