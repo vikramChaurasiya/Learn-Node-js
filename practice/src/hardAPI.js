@@ -4,12 +4,15 @@ const PORT = process.env.PORT || 3000;
 const User = require("./models/user")
 const app = express();
 
-app.use(express.json())  //it is middleware 
 
 app.post("/signup", async(req, res) => {
+    const user = new User ({
+        firstName: "sachin",
+        lastName: "tendulkar",
+        emailId : "sachin@tendulkar.com",
+        password: "sachin@1234"
+    })
 
-
-    const user = new User(req.body);
 
     try {
         await user.save();
@@ -19,6 +22,9 @@ app.post("/signup", async(req, res) => {
     }
     
 })
+
+
+
 
 
 dbConnection()
